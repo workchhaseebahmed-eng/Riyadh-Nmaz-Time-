@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Design System Colors */
+  --color-primary: #10b981;
+  --color-primary-dark: #065f46;
+  --color-secondary: #f59e0b;
+  --color-bg-dark: #131313;
+  --color-surface-dark: #1c1b1b;
+  --color-surface-lighter: #262626;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-muted: #94a3b8;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-on-surface font-sans antialiased;
+    background-image: url("https://www.transparenttextures.com/patterns/islamic-art.png");
+    background-repeat: repeat;
+    background-opacity: 0.03;
+  }
+}
+
+/* Custom scrollbar for the monthly table */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-surface-dark;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
+}
+
+.islamic-pattern-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/islamic-art.png");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
